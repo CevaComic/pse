@@ -11,17 +11,17 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ImageType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-            ->add('source', FileType::class, array('label' => 'Imagine', 'attr' => array('accept' => 'images/*')))
-            ->add('title', TextType::class, array('label' => 'Titlu imagine'));
-    }
+  public function buildForm(FormBuilderInterface $builder, array $options): void
+  {
+    $builder
+      ->add('source', null, array('label' => 'Imagine', 'attr' => array('accept' => 'images/*')))
+      ->add('title', TextType::class, array('label' => 'Titlu imagine'));
+  }
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => Image::class,
-        ]);
-    }
+  public function configureOptions(OptionsResolver $resolver): void
+  {
+    $resolver->setDefaults([
+      'data_class' => Image::class,
+    ]);
+  }
 }
